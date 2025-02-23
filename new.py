@@ -1,7 +1,6 @@
 import os
 import openai
 from data.chromadb_store import retrieve_drug_info
-from models.translate import translate_text, LANGUAGE_CODES
 from utils.config import load_env
 
 # Load environment variables
@@ -42,9 +41,6 @@ def chatgpt_generate(prompt, model="gpt-3.5-turbo"):
         max_tokens=500
     )
 
-    # Translate response to the final selected language
-    final_lang_code = LANGUAGE_CODES.get(final_lang, "eng_Latn")
-    translated_response = translate_text(gpt_response, target_lang_code=final_lang_code)
 
     formatted_response = response.choices[0].message.content.strip()
     return formatted_response

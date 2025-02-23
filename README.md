@@ -9,7 +9,7 @@ This is an AI-powered drug information assistant that:
 ## 🛠 Installation
 
 ```bash
-git clone https://github.com/yourusername/druginfo-app.git
-cd druginfo-app
+git clone https://github.com/Olarsk/druginfo-wazobia.git
+cd druginfo-wazobia
 pip install -r requirements.txt
 ```

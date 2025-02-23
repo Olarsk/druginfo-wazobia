@@ -3,4 +3,6 @@ streamlit
 langchain
 chromadb
 huggingface-hub
+transformers
+torch
 python-dotenv
