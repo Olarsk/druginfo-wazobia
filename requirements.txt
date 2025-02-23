@@ -1,0 +1,6 @@
+openai
+streamlit
+langchain
+chromadb
+huggingface-hub
+python-dotenv
