@@ -1,5 +1,5 @@
 import streamlit as st
-from src.models.gpt_model import chatgpt_generate
+from models.gpt_model import chatgpt_generate
 
 st.title("💊 Drug Information Assistant")
 st.write("Ask any drug-related question, and I'll retrieve data from verified sources!")

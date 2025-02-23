@@ -1,7 +1,7 @@
 import os
 import openai
-from src.data.chromadb_store import retrieve_drug_info
-from src.utils.config import load_env
+from data.chromadb_store import retrieve_drug_info
+from utils.config import load_env
 
 # Load environment variables
 api_key = load_env("OPENAI_API_KEY")
