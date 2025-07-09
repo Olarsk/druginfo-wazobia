@@ -1,25 +1,46 @@
+"""
+NLLB-200 Translation Module
+
+Provides translation using the facebook/nllb-200-distilled-600M model.
+Supports Hausa, Yoruba, Igbo, French, and English by default.
+"""
+
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-# Define the NLLB Translation Model
+# Device setup
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NLLB_MODEL_NAME = "facebook/nllb-200-distilled-600M"
 
-# Load tokenizer & model
+# Load tokenizer & model (cached on first use)
 tokenizer_nllb = AutoTokenizer.from_pretrained(NLLB_MODEL_NAME)
 model_nllb = AutoModelForSeq2SeqLM.from_pretrained(NLLB_MODEL_NAME).to(DEVICE)
 
 # Supported language codes in NLLB-200
 LANGUAGE_CODES = {
-    "en": "eng_Latn",
-    "ha": "hau_Latn",  # Hausa
-    "yo": "yor_Latn",  # Yoruba
-    "ig": "ibo_Latn",  # Igbo
-    "fr": "fra_Latn",  # French
+    "en": "eng_Latn",   # English
+    "ha": "hau_Latn",   # Hausa
+    "yo": "yor_Latn",   # Yoruba
+    "ig": "ibo_Latn",   # Igbo
+    "fr": "fra_Latn",   # French
+    # Add more as needed
 }
 
+def get_lang_code(lang: str) -> str:
+    """Get NLLB language code from short language key (e.g., 'yo')."""
+    if lang not in LANGUAGE_CODES:
+        raise ValueError(f"Unsupported language: {lang}")
+    return LANGUAGE_CODES[lang]
+
 def translate_text(text, target_lang_code="eng_Latn"):
-    """Translates text to the target language using NLLB-200."""
+    """
+    Translate text to the target language using NLLB-200.
+    Args:
+        text (str): The text to translate.
+        target_lang_code (str): NLLB language code (e.g., 'yor_Latn').
+    Returns:
+        str: Translated text.
+    """
     if target_lang_code == "eng_Latn":  # No translation needed for English
         return text
 

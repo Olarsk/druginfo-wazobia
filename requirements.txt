@@ -1,9 +1,8 @@
-openai
 streamlit
-langchain
-langchain-community
-chromadb
-huggingface-hub
+pinecone
+openai
 transformers
 torch
+requests
 python-dotenv
+aCX
