@@ -5,3 +5,5 @@ chroma_db_backup.zip
 data/
 *.txt
 venv/
+notebook.ipynb
+*.ipynb
