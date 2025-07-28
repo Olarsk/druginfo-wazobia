@@ -6,7 +6,7 @@ from utils.config import load_env
 api_key = load_env("OPENAI_API_KEY")
 client = openai.Client(api_key=api_key)
 
-def chatgpt_generate(prompt, context=None, model="gpt-3.5-turbo", final_lang="en"):
+def chatgpt_generate(prompt, context=None, model="gpt-4o", final_lang="en"):
     system_prompt = f"""
     You are a highly intelligent summarization expert with deep expertise in pharmaceuticals and clinical drug information.
     You have been provided with multiple pieces of data from reputable sources regarding the following inquiry:
