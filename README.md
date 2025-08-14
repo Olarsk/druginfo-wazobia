@@ -40,6 +40,10 @@ streamlit run app/main.py
 
 > How many tablets of 500mg paracetamol should an adult take?
 
+<img width="1920" height="969" alt="Screenshot (476)" src="https://github.com/user-attachments/assets/333dcda6-7875-42b6-80ea-f8c7931a9570" />
+
+
+
 ## 📦 Requirements
 
 See `requirements.txt` for dependencies (OpenAI, Streamlit, Pinecone, Transformers, etc).
