@@ -12,13 +12,14 @@ An AI-powered multilingual drug information assistant for healthcare professiona
 - Text-to-speech (TTS) for local Nigerian languages
 
 ## 🛠 Installation
-
+- Connect your vector data source in .env (Pinecone API)
 ```bash
 git clone https://github.com/Olarsk/druginfo-wazobia.git
 cd druginfo-wazobia
 pip install -r requirements.txt
 ```
-
+- update your .env as necessary
+  
 ## 🚀 Usage
 
 Run the Streamlit app:
